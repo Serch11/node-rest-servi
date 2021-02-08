@@ -61,7 +61,7 @@ app.put('/usuario/:id', (req, res) => {
 
     Usuario.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, usuarioDB) => {
 
-        if (err) return res.status(400).json({ ok: false, err:});
+        if (err) return res.status(400).json({ ok: false,err:err});
 
         res.status(200).json({ ok: true, usuarioDB: usuarioDB })
 
